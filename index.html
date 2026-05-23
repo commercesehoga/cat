@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Under Construction – CAT & MBA Mock Test | ThunderStudy by Wondermayank</title>
+<meta name="description" content="CAT & MBA Mock Test Portal coming soon. ThunderStudy by Wondermayank.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --white:    #FFFFFF;
+  --off:      #F3F8FD;
+  --sky:      #E1F0FB;
+  --sky2:     #C8E4F7;
+  --sky3:     #A8D4F0;
+  --blue:     #1A7DC4;
+  --blue2:    #1260A0;
+  --blue3:    #0B4880;
+  --teal:     #0EA5C8;
+  --teal2:    #38BDF8;
+  --navy:     #0C2D4A;
+  --text:     #1A3550;
+  --sub:      #4A7090;
+  --muted:    #7A9BB8;
+  --border:   #C0DCF0;
+  --border2:  #D8ECFA;
+}
+
+html, body { width:100%; min-height:100vh; }
+
+body {
+  background: var(--off);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ── BACKGROUND ── */
+.bg-mesh {
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 65% 45% at 8% 15%,  rgba(26,125,196,.10) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 45% at 92% 80%,  rgba(14,165,200,.08) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 35% at 55% 50%,  rgba(26,125,196,.05) 0%, transparent 70%);
+  background-color: var(--off);
+}
+.bg-dots {
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image: radial-gradient(circle, rgba(26,125,196,.13) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+.bg-top {
+  position:fixed;top:0;left:0;right:0;height:52vh;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg, rgba(200,228,247,.55) 0%, transparent 100%);
+}
+.orb {
+  position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(70px);
+  animation:orbDrift var(--od,11s) ease-in-out infinite var(--odl,0s);
+}
+.orb.a { width:420px;height:420px;background:rgba(26,125,196,.08);top:-120px;left:-100px; }
+.orb.b { width:320px;height:320px;background:rgba(14,165,200,.07);bottom:-80px;right:-80px;--od:13s;--odl:-6s; }
+@keyframes orbDrift {
+  0%,100%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(20px,-18px) scale(1.06)}
+}
+
+/* ── CORNER RIBBON ── */
+.corner-badge {
+  position:fixed;top:0;right:0;
+  width:150px;height:150px;overflow:hidden;z-index:30;pointer-events:none;
+}
+.corner-badge span {
+  position:absolute;top:36px;right:-32px;width:150px;
+  background:linear-gradient(90deg,var(--blue2),var(--blue));
+  color:#fff;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:13px;letter-spacing:4px;
+  text-align:center;padding:7px 0;
+  transform:rotate(45deg);
+  box-shadow:0 4px 18px rgba(26,125,196,.35);
+}
+
+/* ── LAYOUT ── */
+.page {
+  position:relative;z-index:1;
+  width:100%;max-width:980px;
+  padding:32px 24px 60px;
+  display:flex;flex-direction:column;align-items:center;
+}
+
+/* ── TOP STRIP ── */
+.top-strip {
+  width:100%;display:flex;align-items:center;
+  justify-content:space-between;
+  margin-bottom:32px;padding:0 4px;
+}
+.brand-pill {
+  display:flex;align-items:center;gap:8px;
+  background:rgba(26,125,196,.08);
+  border:1.5px solid rgba(26,125,196,.22);
+  border-radius:99px;padding:6px 16px;
+}
+.brand-dot {
+  width:7px;height:7px;border-radius:50%;
+  background:var(--blue);
+  box-shadow:0 0 8px rgba(26,125,196,.5);
+  animation:dotGlow 2s ease-in-out infinite;
+}
+@keyframes dotGlow {
+  0%,100%{opacity:.7;transform:scale(1)}
+  50%{opacity:1;transform:scale(1.35);box-shadow:0 0 14px rgba(26,125,196,.7)}
+}
+.brand-name {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:15px;letter-spacing:4px;color:var(--blue2);
+}
+.by-tag {
+  font-family:'Playfair Display',serif;
+  font-size:13px;font-style:italic;color:var(--muted);
+}
+
+/* ── GIF HERO ── */
+.gif-hero {
+  width:100%;max-width:660px;
+  margin-bottom:4px;position:relative;
+}
+.gif-halo {
+  position:absolute;inset:-20px;border-radius:32px;
+  background:radial-gradient(ellipse, rgba(26,125,196,.18) 0%, transparent 70%);
+  filter:blur(22px);
+  animation:haloPulse 4s ease-in-out infinite;
+  z-index:0;
+}
+@keyframes haloPulse { 0%,100%{opacity:.5;transform:scale(1)} 50%{opacity:1;transform:scale(1.05)} }
+
+.gif-frame {
+  position:relative;z-index:1;
+  width:100%;border-radius:22px;overflow:hidden;
+  background:var(--white);
+  border:1.5px solid var(--border);
+  box-shadow:
+    0 2px 0 var(--border2),
+    0 10px 36px rgba(26,125,196,.14),
+    0 36px 72px rgba(12,45,74,.08);
+}
+.gif-frame::after {
+  content:'';position:absolute;inset:0;
+  border-radius:22px;
+  box-shadow:inset 0 0 0 1px rgba(26,125,196,.08);
+  pointer-events:none;z-index:2;
+}
+
+/* browser chrome */
+.gif-chrome {
+  width:100%;height:38px;
+  background:var(--sky);
+  border-bottom:1.5px solid var(--border);
+  display:flex;align-items:center;padding:0 14px;gap:7px;
+}
+.chrome-dot { width:11px;height:11px;border-radius:50%; }
+.chrome-dot.red   { background:#FF5F57; }
+.chrome-dot.amber { background:#FEBC2E; }
+.chrome-dot.green { background:#28C840; }
+.chrome-bar {
+  flex:1;height:22px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:5px;margin:0 10px;
+  display:flex;align-items:center;padding:0 10px;
+}
+.chrome-url {
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;color:var(--muted);letter-spacing:.3px;
+}
+
+.gif-frame img {
+  width:100%;display:block;
+}
+
+.gif-reflection {
+  width:88%;height:36px;margin:0 auto;
+  background:linear-gradient(180deg,rgba(26,125,196,.12) 0%,transparent 100%);
+  border-radius:0 0 22px 22px;
+  filter:blur(10px);
+  transform:scaleY(-0.35);transform-origin:top;
+  opacity:.5;margin-top:-2px;
+}
+
+/* ── EYEBROW ── */
+.eyebrow {
+  display:flex;align-items:center;gap:14px;
+  margin:36px 0 14px;
+}
+.ey-line { width:50px;height:1.5px;background:linear-gradient(90deg,transparent,var(--blue)); }
+.ey-line.r { background:linear-gradient(90deg,var(--blue),transparent); }
+.ey-badge {
+  background:rgba(26,125,196,.09);
+  border:1.5px solid rgba(26,125,196,.28);
+  border-radius:99px;padding:4px 16px;
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;font-weight:500;letter-spacing:4px;color:var(--blue);
+}
+
+/* ── HEADING ── */
+.main-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(44px,8vw,86px);
+  line-height:.95;text-align:center;
+  color:var(--navy);letter-spacing:6px;
+  margin-bottom:6px;
+}
+.main-title .grad {
+  background:linear-gradient(135deg,var(--blue2),var(--blue),var(--teal));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;display:block;
+}
+.main-title .sub {
+  display:block;
+  font-size:clamp(18px,3vw,30px);
+  font-weight:400;letter-spacing:8px;
+  color:rgba(26,125,196,.45);margin-top:4px;
+}
+
+.tagline {
+  font-family:'Playfair Display',serif;
+  font-size:17px;font-style:italic;
+  color:var(--sub);text-align:center;margin-bottom:10px;
+}
+
+.motto-strip {
+  display:flex;align-items:center;gap:12px;margin-bottom:40px;
+}
+.mot-gem {
+  width:6px;height:6px;
+  background:linear-gradient(135deg,var(--blue),var(--teal));
+  border-radius:1px;transform:rotate(45deg);
+}
+.mot-text {
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;font-weight:500;letter-spacing:3.5px;color:var(--muted);
+}
+
+/* ── PROGRESS ── */
+.progress-wrap { width:100%;max-width:540px;margin-bottom:42px; }
+.prog-meta {
+  display:flex;justify-content:space-between;
+  font-family:'DM Sans',sans-serif;
+  font-size:11px;font-weight:500;letter-spacing:2px;
+  color:var(--blue2);margin-bottom:10px;
+}
+.prog-track {
+  width:100%;height:6px;
+  background:var(--sky2);
+  border:1px solid var(--border);
+  border-radius:99px;overflow:visible;position:relative;
+}
+.prog-fill {
+  height:100%;width:74%;
+  background:linear-gradient(90deg,var(--blue3),var(--blue),var(--teal2));
+  border-radius:99px;position:relative;
+  animation:fillShimmer 2.8s ease-in-out infinite;
+}
+@keyframes fillShimmer { 0%,100%{filter:brightness(.95)} 50%{filter:brightness(1.15)} }
+.prog-dot {
+  position:absolute;right:-8px;top:-5px;
+  width:16px;height:16px;
+  background:var(--white);
+  border:2.5px solid var(--blue);
+  border-radius:50%;
+  box-shadow:0 0 0 4px rgba(26,125,196,.18),0 0 10px rgba(26,125,196,.4);
+  animation:dotPulse 1.6s ease-in-out infinite;
+}
+@keyframes dotPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.35)} }
+
+.prog-tags {
+  display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;
+}
+.prog-tag {
+  background:rgba(14,165,200,.08);
+  border:1.5px solid rgba(14,165,200,.25);
+  border-radius:99px;
+  padding:3px 14px;
+  font-size:10px;font-weight:600;letter-spacing:1.5px;
+  color:var(--teal);
+}
+
+/* ── COUNTDOWN ── */
+.countdown {
+  display:flex;align-items:flex-end;gap:14px;margin-bottom:50px;
+}
+.cu { display:flex;flex-direction:column;align-items:center;gap:7px; }
+.cu-box {
+  width:76px;height:76px;
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:38px;letter-spacing:1px;
+  color:var(--navy);
+  position:relative;overflow:hidden;
+  box-shadow:0 4px 18px rgba(26,125,196,.10),0 1px 0 var(--sky2);
+}
+.cu-box::before {
+  content:'';position:absolute;left:0;right:0;top:0;height:50%;
+  background:rgba(26,125,196,.03);
+}
+.cu-box::after {
+  content:'';position:absolute;left:8%;right:8%;top:50%;height:1px;
+  background:var(--border);
+}
+.cu-lbl {
+  font-family:'DM Sans',sans-serif;
+  font-size:9px;font-weight:500;letter-spacing:2.5px;color:var(--muted);
+}
+.cu-sep {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:38px;color:var(--sky3);
+  margin-bottom:26px;
+  animation:blinkSep 1s step-end infinite;
+}
+@keyframes blinkSep { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* ── FEATURES ── */
+.features {
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:14px;width:100%;max-width:780px;margin-bottom:50px;
+}
+.fc {
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:16px;padding:24px 18px;
+  text-align:center;position:relative;overflow:hidden;
+  transition:border-color .3s,transform .25s,box-shadow .3s;
+  box-shadow:0 2px 10px rgba(26,125,196,.07);
+}
+.fc::before {
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--blue),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.fc::after {
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(26,125,196,.05) 0%,transparent 70%);
+  opacity:0;transition:opacity .3s;
+}
+.fc:hover {
+  border-color:rgba(26,125,196,.4);
+  transform:translateY(-5px);
+  box-shadow:0 12px 36px rgba(26,125,196,.14);
+}
+.fc:hover::before,.fc:hover::after { opacity:1; }
+.fc-icon { font-size:30px;margin-bottom:11px;display:block;position:relative;z-index:1; }
+.fc-name {
+  font-family:'DM Sans',sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:2.5px;
+  color:var(--blue);display:block;margin-bottom:6px;position:relative;z-index:1;
+}
+.fc-desc { font-size:13px;color:var(--sub);line-height:1.5;position:relative;z-index:1; }
+
+/* ── DIVIDER ── */
+.divider {
+  display:flex;align-items:center;gap:14px;
+  width:100%;max-width:500px;margin-bottom:32px;
+}
+.dl { flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--border)); }
+.dl.r { background:linear-gradient(90deg,var(--border),transparent); }
+.dorn {
+  width:9px;height:9px;
+  border:2px solid var(--blue);border-radius:50%;position:relative;
+}
+.dorn::before {
+  content:'';position:absolute;inset:2px;
+  background:var(--blue);border-radius:50%;
+}
+
+/* ── SOCIAL ── */
+.social-row {
+  display:flex;gap:22px;align-items:center;
+  margin-bottom:32px;flex-wrap:wrap;justify-content:center;
+}
+.soc {
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;font-weight:500;letter-spacing:3px;
+  color:var(--muted);text-decoration:none;transition:color .2s;position:relative;
+}
+.soc::after {
+  content:'';position:absolute;bottom:-2px;left:0;right:0;
+  height:1.5px;
+  background:linear-gradient(90deg,var(--blue),var(--teal));
+  transform:scaleX(0);transform-origin:left;transition:transform .25s;
+}
+.soc:hover { color:var(--blue); }
+.soc:hover::after { transform:scaleX(1); }
+.soc-sep { width:3px;height:3px;background:var(--border);border-radius:50%; }
+
+/* ── FOOTER ── */
+.footer {
+  display:flex;flex-direction:column;align-items:center;gap:5px;
+  padding-top:20px;
+  border-top:1.5px solid var(--border);
+  width:100%;max-width:500px;
+}
+.footer-logo {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:16px;letter-spacing:5px;
+  background:linear-gradient(90deg,var(--blue2),var(--teal));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.footer-by {
+  font-family:'Playfair Display',serif;
+  font-size:12px;font-style:italic;color:var(--muted);
+}
+.footer-copy {
+  font-size:11px;letter-spacing:.5px;color:var(--muted);opacity:.55;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  .features{grid-template-columns:repeat(2,1fr);}
+  .countdown{gap:8px;}
+  .cu-box{width:60px;height:60px;font-size:28px;}
+  .gif-hero{max-width:100%;}
+  .main-title{font-size:clamp(38px,10vw,70px);}
+}
+@media(max-width:380px){
+  .features{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-mesh"></div>
+<div class="bg-dots"></div>
+<div class="bg-top"></div>
+<div class="orb a"></div>
+<div class="orb b"></div>
+<div class="corner-badge"><span>COMING SOON</span></div>
+
+<main class="page">
+
+  <!-- Top strip -->
+  <div class="top-strip">
+    <div class="brand-pill">
+      <div class="brand-dot"></div>
+      <div class="brand-name">THUNDERSTUDY</div>
+    </div>
+    <div class="by-tag">by Wondermayank</div>
+  </div>
+
+  <!-- GIF HERO -->
+  <div class="gif-hero">
+    <div class="gif-halo"></div>
+    <div class="gif-frame">
+      <div class="gif-chrome">
+        <div class="chrome-dot red"></div>
+        <div class="chrome-dot amber"></div>
+        <div class="chrome-dot green"></div>
+        <div class="chrome-bar">
+          <span class="chrome-url">thunderstudy.wondermayank.in/cat-mba</span>
+        </div>
+      </div>
+      <img
+        src="https://cdn.dribbble.com/userupload/21862384/file/original-d6292033c46e1231c317753387c8f5c9.gif"
+        alt="CAT MBA Mock Test Preview"
+        loading="eager"
+      />
+    </div>
+    <div class="gif-reflection"></div>
+  </div>
+
+  <!-- Eyebrow -->
+  <div class="eyebrow">
+    <div class="ey-line"></div>
+    <div class="ey-badge">UNDER CONSTRUCTION</div>
+    <div class="ey-line r"></div>
+  </div>
+
+  <h1 class="main-title">
+    <span class="grad">CAT & MBA</span>
+    <span class="sub">Mock Test Portal</span>
+  </h1>
+
+  <p class="tagline">Your shortcut to the IIMs — platform arriving soon</p>
+
+  <div class="motto-strip">
+    <div class="mot-gem"></div>
+    <span class="mot-text">QUANTITATIVE · VERBAL · LOGICAL · DATA</span>
+    <div class="mot-gem"></div>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-wrap">
+    <div class="prog-meta">
+      <span>DEVELOPMENT PROGRESS</span>
+      <span>74%</span>
+    </div>
+    <div class="prog-track">
+      <div class="prog-fill">
+        <div class="prog-dot"></div>
+      </div>
+    </div>
+    <div class="prog-tags">
+      <span class="prog-tag">CAT</span>
+      <span class="prog-tag">XAT</span>
+      <span class="prog-tag">SNAP</span>
+      <span class="prog-tag">IIFT</span>
+      <span class="prog-tag">MAT</span>
+      <span class="prog-tag">CMAT</span>
+    </div>
+  </div>
+
+  <!-- Countdown 30 June 2026 IST -->
+  <div class="countdown">
+    <div class="cu"><div class="cu-box" id="cdDays">00</div><div class="cu-lbl">DAYS</div></div>
+    <div class="cu-sep">:</div>
+    <div class="cu"><div class="cu-box" id="cdHours">00</div><div class="cu-lbl">HOURS</div></div>
+    <div class="cu-sep">:</div>
+    <div class="cu"><div class="cu-box" id="cdMins">00</div><div class="cu-lbl">MINS</div></div>
+    <div class="cu-sep">:</div>
+    <div class="cu"><div class="cu-box" id="cdSecs">00</div><div class="cu-lbl">SECS</div></div>
+  </div>
+
+  <!-- Features -->
+  <div class="features">
+    <div class="fc">
+      <span class="fc-icon">📐</span>
+      <span class="fc-name">QUANT</span>
+      <span class="fc-desc">Arithmetic, Algebra, Geometry & Modern Maths at IIM level</span>
+    </div>
+    <div class="fc">
+      <span class="fc-icon">📖</span>
+      <span class="fc-name">VARC</span>
+      <span class="fc-desc">Reading Comprehension, Para-jumbles & Sentence Correction</span>
+    </div>
+    <div class="fc">
+      <span class="fc-icon">🧩</span>
+      <span class="fc-name">DILR</span>
+      <span class="fc-desc">Data Interpretation & Logical Reasoning sets — timed</span>
+    </div>
+    <div class="fc">
+      <span class="fc-icon">⏱️</span>
+      <span class="fc-name">FULL MOCKS</span>
+      <span class="fc-desc">3-section 2-hour CAT pattern with sectional time limits</span>
+    </div>
+    <div class="fc">
+      <span class="fc-icon">🏆</span>
+      <span class="fc-name">PERCENTILE</span>
+      <span class="fc-desc">Real-time %ile estimate & all-India rank on leaderboard</span>
+    </div>
+    <div class="fc">
+      <span class="fc-icon">📊</span>
+      <span class="fc-name">ANALYTICS</span>
+      <span class="fc-desc">Accuracy, speed, topic-weakness & attempt strategy reports</span>
+    </div>
+  </div>
+
+  <div class="divider">
+    <div class="dl"></div>
+    <div class="dorn"></div>
+    <div class="dl r"></div>
+  </div>
+
+  <!-- Social -->
+  <div class="social-row">
+    <a href="https://t.me/thunderstudy_official" class="soc" target="_blank" rel="noopener">TELEGRAM</a>
+    <div class="soc-sep"></div>
+    <a href="https://instagram.com/wondermayank" class="soc" target="_blank" rel="noopener">INSTAGRAM</a>
+    <div class="soc-sep"></div>
+    <a href="https://youtube.com/@wondermayank" class="soc" target="_blank" rel="noopener">YOUTUBE</a>
+    <div class="soc-sep"></div>
+    <a href="https://wondermayank.github.io" class="soc" target="_blank" rel="noopener">WONDERMAYANK</a>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-logo">THUNDERSTUDY</div>
+    <div class="footer-by">by Wondermayank</div>
+    <div class="footer-copy">© 2025 ThunderStudy · CAT & MBA Mock Test · All rights reserved</div>
+  </div>
+
+</main>
+
+<script>
+const TARGET = new Date('2026-06-30T23:59:59+05:30');
+function pad(n){ return String(n).padStart(2,'0'); }
+function tick(){
+  const d = Math.max(0, TARGET - new Date());
+  document.getElementById('cdDays').textContent  = pad(Math.floor(d/86400000));
+  document.getElementById('cdHours').textContent = pad(Math.floor((d%86400000)/3600000));
+  document.getElementById('cdMins').textContent  = pad(Math.floor((d%3600000)/60000));
+  document.getElementById('cdSecs').textContent  = pad(Math.floor((d%60000)/1000));
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
